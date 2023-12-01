@@ -1,13 +1,15 @@
-import { describe, it, expect } from "bun:test";
+import { describe, expect, it } from "bun:test"
 
-import day1 from ".";
+import day1 from "."
 
 describe("day1", () => {
-    it("solves p1", () => {
-        day1.p1();
-    });
+    it("p1", async () => {
+        const actual = await day1.p1()
+        expect(actual).toBe(54597)
+    })
 
-    it("solves p2", () => {
-        day1.p2();
-    });
+    it("p2", async () => {
+        const actual = await day1.p2()
+        expect(actual).toBe(54504)
+    })
 })
