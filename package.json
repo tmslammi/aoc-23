@@ -1,14 +1,18 @@
 {
-    "name": "aoc23",
-    "module": "index.ts",
-    "type": "module",
-    "devDependencies": {
-        "bun-types": "latest"
-    },
-    "peerDependencies": {
-        "typescript": "^5.0.0"
-    },
-    "scripts": {
-        "test": "bun test"
-    }
+  "name": "aoc23",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "test": "bun test",
+    "lint": "eslint . --ext .ts"
+  }
 }

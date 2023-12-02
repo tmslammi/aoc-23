@@ -1,21 +1,21 @@
 export async function readFile(filename: string,) {
-    const file = Bun.file(filename)
+  const file = Bun.file(filename)
 
-    const content = await file.text()
+  const content = await file.text()
 
-    const lines = content.split("\n")
+  const lines = content.split('\n')
 
-    return lines
+  return lines
 }
 
 export function isDigit(char: string) {
-    return new RegExp(/\d/).test(char)
+  return new RegExp(/\d/).test(char)
 }
 
 export function first<T>(arr: T[]) {
-    return arr[0]
+  return arr[0]
 }
 
 export function last<T>(arr: T[]) {
-    return arr[arr.length - 1]
+  return arr[arr.length - 1]
 }

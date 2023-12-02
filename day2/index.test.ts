@@ -1,38 +1,38 @@
-import { describe, expect, it } from "bun:test";
+import { describe, expect, it } from 'bun:test'
 
-import day2 from ".";
-import { readFile } from "../util";
+import day2 from '.'
+import { readFile } from '../util'
 
 describe('day2', () => {
-    it("p1 example", async () => {
-        const lines = await readFile("day2/example_1.txt")
+  it('p1 example', async () => {
+    const lines = await readFile('day2/example_1.txt')
 
-        const actual = day2.p1(lines)
+    const actual = day2.p1(lines)
 
-        expect(actual).toBe(8)
-    })
+    expect(actual).toBe(8)
+  })
 
-    it("p1 full", async () => {
-        const lines = await readFile("day2/input.txt")
+  it('p1 full', async () => {
+    const lines = await readFile('day2/input.txt')
 
-        const actual = day2.p1(lines)
+    const actual = day2.p1(lines)
 
-        expect(actual).toBe(2716)
-    })
+    expect(actual).toBe(2716)
+  })
 
-    it("p2 example", async () => {
-        const lines = await readFile("day2/example_2.txt")
+  it('p2 example', async () => {
+    const lines = await readFile('day2/example_2.txt')
 
-        const actual = day2.p2(lines)
+    const actual = day2.p2(lines)
 
-        expect(actual).toBe(2286)
-    })
+    expect(actual).toBe(2286)
+  })
 
-    it("p2 full", async () => {
-        const lines = await readFile("day2/input.txt")
+  it('p2 full', async () => {
+    const lines = await readFile('day2/input.txt')
 
-        const actual = day2.p2(lines)
+    const actual = day2.p2(lines)
 
-        expect(actual).toBe(72227)
-    })
+    expect(actual).toBe(72227)
+  })
 })
