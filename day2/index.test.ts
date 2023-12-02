@@ -4,16 +4,20 @@ import day2 from ".";
 import { readFile } from "../util";
 
 describe('day2', () => {
-    it.skip("p1 example", async () => {
+    it("p1 example", async () => {
         const lines = await readFile("day2/example_1.txt")
 
-        day2.p1(lines)
+        const actual = day2.p1(lines)
+
+        expect(actual).toBe(8)
     })
 
-    it.skip("p1 full", async () => {
+    it("p1 full", async () => {
         const lines = await readFile("day2/input.txt")
 
-        day2.p1(lines)
+        const actual = day2.p1(lines)
+
+        expect(actual).toBe(2716)
     })
 
     it.skip("p2 example", async () => {

@@ -1,4 +1,4 @@
-import { first, isDigit, last, readFile } from "../util"
+import { first, isDigit, last } from "../util"
 
 function p1(lines: string[]) {
     return lines.map(line => {
