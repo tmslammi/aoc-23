@@ -5,7 +5,7 @@ import { readFile } from '../util'
 
 describe('day2', () => {
   it('p1 example', async () => {
-    const lines = await readFile('day2/example_1.txt')
+    const lines = await readFile('day2/example.txt')
 
     const actual = day2.p1(lines)
 
@@ -21,7 +21,7 @@ describe('day2', () => {
   })
 
   it('p2 example', async () => {
-    const lines = await readFile('day2/example_2.txt')
+    const lines = await readFile('day2/example.txt')
 
     const actual = day2.p2(lines)
 

@@ -5,7 +5,7 @@ import { readFile } from '../util'
 
 describe('day1', () => {
   it('p1 example', async () => {
-    const lines = await readFile('day1/example_1.txt')
+    const lines = await readFile('day1/example.txt')
 
     const actual = day1.p1(lines)
     expect(actual).toBe(142)
