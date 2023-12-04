@@ -1,10 +1,8 @@
 class Game {
-  name: string
   winningNumbers: number[]
   playerNumbers: number[]
 
-  constructor(name: string, winningNumbers: number[], playerNumbers: number[]) {
-    this.name = name
+  constructor(winningNumbers: number[], playerNumbers: number[]) {
     this.winningNumbers = winningNumbers
     this.playerNumbers = playerNumbers
   }
@@ -15,11 +13,18 @@ class Game {
         ? score === 0 ? 1 : score * 2 : score
     }, 0)
   }
+
+  getMatches() {
+    return this.winningNumbers.reduce((matches, winningNumber) => {
+      return this.playerNumbers.includes(winningNumber)
+        ? matches + 1 : matches
+    }, 0)
+  }
 }
 
 function parseGames(lines: string[]): Game[] {
   return lines.map(line => {
-    const [card, numbers] = line.split(':')
+    const [, numbers] = line.split(':')
     const [winningNumbers, playerNumbers] = numbers.split('|')
 
     const parsedWinningNumbers = winningNumbers.trim().split(' ')
@@ -28,7 +33,6 @@ function parseGames(lines: string[]): Game[] {
       .filter(n => n !== '').map(n => Number(n.trim()))
 
     const game = new Game(
-      card,
       parsedWinningNumbers,
       parsedPlayerNumbers
     )
@@ -44,7 +48,31 @@ export function p1(lines: string[]) {
 }
 
 export function p2(lines: string[]) {
-  return 0
+  const games = parseGames(lines)
+  const gameScoreMap = new Map<number, number>()
+
+  games.forEach((game, index) => {
+    const matches = game.getMatches()
+    if (!gameScoreMap.has(index)) {
+      gameScoreMap.set(index, 1)
+    }
+
+    const currentGameScore = gameScoreMap.get(index)!
+
+    for (let matchIndex = 1; matchIndex <= matches; matchIndex++) {
+      const nextGameIndex = index + matchIndex
+      if (!gameScoreMap.has(nextGameIndex)) {
+        gameScoreMap.set(nextGameIndex, 1)
+      }
+
+      const nextGameScore = gameScoreMap.get(nextGameIndex)!
+      gameScoreMap.set(nextGameIndex, nextGameScore + currentGameScore)
+    }
+  })
+
+  return [...gameScoreMap.values()].reduce((a, b) => {
+    return a + b
+  }, 0)
 }
 
 export default {

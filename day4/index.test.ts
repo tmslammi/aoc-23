@@ -20,19 +20,19 @@ describe('day4', () => {
     expect(actual).toBe(32001)
   })
 
-  it.skip('p2 example', async () => {
+  it('p2 example', async () => {
     const lines = await readFile('day4/example.txt')
 
     const actual = day4.p2(lines)
 
-    expect(actual).toBe(467835)
+    expect(actual).toBe(30)
   })
 
-  it.skip('p2 full', async () => {
+  it('p2 full', async () => {
     const lines = await readFile('day4/input.txt')
 
     const actual = day4.p2(lines)
 
-    expect(actual).toBe(80253814)
+    expect(actual).toBe(5037841)
   })
 })
